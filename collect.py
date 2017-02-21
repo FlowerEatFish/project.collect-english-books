@@ -13,7 +13,7 @@ def GetStarRate (isbn):
         try:
             checkStarRate.find (class_ = 'a-icon-alt')
             getStar = checkStarRate.find (class_ = 'a-icon-alt')
-            return getStar.string[1] + getStar.string[2] + getStar.string[3]
+            return getStar.string[0] + getStar.string[1] + getStar.string[2]
         except:
             getStar = 'None'
             return getStar
