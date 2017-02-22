@@ -7,8 +7,12 @@ print (type (isbnList))
 for i in range (len(isbnList)):
     print(isbnList[i])
     try:
+        # 如果 ISBN 欄位裡面是 ISBN 的命令
         int (isbnList[i])
-        print (collect.GetStarRate (str(isbnList[i]))
+        #print("It's OK; it is %s" % str(isbnList[i]))
+        print (collect.GetStarRate (str(isbnList[i])))
     except:
+        # 如果不是的命令
         print ("No ISBN is available.")
-    time.sleep (3)
+    # 避免被 Amazon 封鎖
+    time.sleep (5)
