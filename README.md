@@ -23,3 +23,21 @@
 > #### Porject Flows:
 >
 > Read Microsoft Office Excel file -> Catch ISBN -> Collect Star from Amazon -> Write Microsoft Office Excel file
+
+***
+
+> #### Progress:
+>
+> [x] Read .xlsx file.
+>
+> [x] Catch ISBN in .xlsx file.
+>
+> [x] Collect Star from Amazon.
+>
+> [x] Write .xlse file.
+>
+> [ ] Design user interface (UI).
+>
+> [ ] Manual find the path of .xlsx file.
+>
+> [ ] Auto find the amount of the books from .xlsx file.
