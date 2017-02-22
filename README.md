@@ -28,16 +28,16 @@
 
 > #### Progress:
 >
-> [x] Read .xlsx file.
+> - [x] Read .xlsx file.
 >
-> [x] Catch ISBN in .xlsx file.
+> - [x] Catch ISBN in .xlsx file.
 >
-> [x] Collect Star from Amazon.
+> - [x] Collect Star from Amazon.
 >
-> [x] Write .xlse file.
+> - [x] Write .xlse file.
 >
-> [ ] Design user interface (UI).
+> - [ ] Design user interface (UI).
 >
-> [ ] Manual find the path of .xlsx file.
+> - [ ] Manual find the path of .xlsx file.
 >
-> [ ] Auto find the amount of the books from .xlsx file.
+> - [ ] Auto find the amount of the books from .xlsx file.
