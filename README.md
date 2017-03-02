@@ -22,22 +22,24 @@
 
 > #### Porject Flows:
 >
-> Read Microsoft Office Excel file -> Catch ISBN -> Collect Star from Amazon -> Write Microsoft Office Excel file
+> Read Microsoft Office Excel file -> Catch ISBN -> Collect Star from NBINET -> Write Microsoft Office Excel file -> Determine the book format -> Arrange the order of the books
 
 ***
 
 > #### Progress:
 >
-> - [x] Read .xlsx file.
+> - [ ] Read .xlsx file.
 >
-> - [x] Catch ISBN in .xlsx file.
+> - [ ] Catch ISBN in .xlsx file.
 >
-> - [x] Collect Star from Amazon.
+> - [ ] Collect book details from NBINET.
 >
-> - [x] Write .xlse file.
+> - [ ] Write .xlsx file.
 >
 > - [ ] Design user interface (UI).
 >
 > - [ ] Manual find the path of .xlsx file.
 >
 > - [ ] Auto find the amount of the books from .xlsx file.
+>
+> - [ ] Determine the book format (MARC21 or Chinese MARC).
