@@ -9,14 +9,14 @@ def GetStarRate (isbn):
     getPage = BeautifulSoup (getRes.text , 'html.parser')
 
     # 尋找評價區塊
-    getStarPage = getPage.find_all (class_ = 'a-column a-span5 a-span-last')
-
+    getStarPage = getPage.find_all (class_ = 'a-row a-spacing-mini')
+    
     # 檢查並收集星數或無評價
     for checkStarRate in getStarPage:
         try:
             checkStarRate.find (class_ = 'a-icon-alt')
             getStar = checkStarRate.find (class_ = 'a-icon-alt')
-            return getStar.string[0] + getStar.string[1] + getStar.string[2]
+            return getStar.string
         except:
             getStar = 'None'
             return getStar

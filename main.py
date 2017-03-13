@@ -1,6 +1,6 @@
 import read, collect, write, time
 
-isbnList = read.GetAllIsbn(50)
+isbnList = read.GetAllIsbn(100)
 print (isbnList)
 print (type (isbnList))
 
