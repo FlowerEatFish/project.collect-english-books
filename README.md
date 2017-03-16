@@ -18,7 +18,7 @@
 >
 > beautifulsoup4 v4.5.3
 >
-> PyQt5 v5.8.1
+> Flask v0.12
 
 ***
 
@@ -40,7 +40,7 @@
 >
 > - [x] Write .xlsx file.
 >
-> - [x] Design user interface (UI).
+> - [ ] Design user interface (UI).
 >
 > - [ ] Manual find the path of .xlsx file.
 >
