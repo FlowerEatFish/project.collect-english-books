@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 class AmazonCollection():
     #isbn = getISBN # int
-    browser = 'Chrome/56.0.2924.87' # str
+    browser = 'Chrome/55.0.2924.87' # str
     result = {'name': '', 'author':  '', 'star': ''} # dict
 
     def __init__(self, getISBN):
@@ -12,7 +12,6 @@ class AmazonCollection():
         getHeader = {'user-agent' : self.browser}
         getRes = requests.get(getUrl, headers = getHeader)
         self.getPage = BeautifulSoup(getRes.text, 'html.parser')
-
         self.getPage = self.getBookDetail()
 
         self.result['name'] = self.getBookName()
@@ -33,7 +32,6 @@ class AmazonCollection():
 
     def getAuthor(self):
         try:
-            print('test')
             checkPage = self.getPage.find(class_ = 'a-row a-spacing-small')
             checkPage = checkPage.find(class_ = 'a-row a-spacing-none')
             checkPage = checkPage.find_all('span')
@@ -49,7 +47,6 @@ class AmazonCollection():
                     i = i.find(class_ = 'a-link-normal a-text-normal')
                 author += i.string
                 num += 1
-            print(author)
 
             return author
         except:
@@ -63,10 +60,11 @@ class AmazonCollection():
             return "None"
 
 # Demo
-print("Run demo")
-isbn = ["9780553808049"]
-if isbn != None:
-    for i in isbn:
-        print ("Check ISBN: " + i)
-        data = AmazonCollection(i)
-        print (data.result)
+if __name__ == '__main__':
+    print("Run demo")
+    isbn = ["9780553808049"]
+    if isbn != None:
+        for i in isbn:
+            print ("Check ISBN: " + i)
+            data = AmazonCollection(i)
+            print (data.result)
