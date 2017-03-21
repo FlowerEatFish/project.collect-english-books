@@ -38,6 +38,16 @@
 >
 > - [ ] Collect book details from Amazon.
 >
+> - -> [x] Name
+>
+> - -> [x] Authors
+>
+> - -> [ ] Publisher
+>
+> - -> [ ] Publication year
+>
+> - -> [ ] Edition
+>
 > - [x] Write .xlsx file.
 >
 > - [ ] Design user interface (UI).
