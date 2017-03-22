@@ -1,45 +1,51 @@
 from openpyxl import load_workbook
 
-def CheckGetAllIsbn_number (number):
-    if type (number) is not int:
-        print ("The number isn't integer, so set it into 10.")
-        return 10
-    else:
-        print ("The number is integer, so set it into %d." % number)
-        return number
+class CollectAllIsbn():
+    def __init__(self, getPath):
+        self.path = str(getPath)
+        self.maxCollection = 100 # int, 最大收集數
 
-def GetAllIsbn (number):
-    # 檢查 number 是否為整數
-    number = CheckGetAllIsbn_number (number)
+        if self.checkFile():
+            self.file = load_workbook(filename = self.path)
+            self.data = self.collectIsbn()
+        else:
+            print('The path is incorrect.')
+            self.data = 'No data due to file not found.'
 
-    # 取得 Excel 檔案
-    getExcel = load_workbook (filename = "test.xlsx")
-    getSheet = getExcel[getExcel.get_sheet_names()[0]]
-    #print (getSheet)
-    #print(type(getSheet))
+    def checkFile(self):
+        try:
+            load_workbook(filename = self.path)
+            return True
+        except:
+            return False
 
-    # 自第一列抓取 ISBN 欄位
-    for i in range (30):
-        checkBlock = getSheet['%s1' % chr(ord('A')+i)]
-        #print(type(checkBlock.value))
-        #print (checkBlock.value)
-        if checkBlock.value == "ISBN" :
-            setColumn = '%s' % chr(ord('A')+i )
-            #print(Row)
-            break
+    def checkFirstColumn(self):
+        getSheet = self.file[self.file.get_sheet_names()[0]]
+        for i in range(50):
+            checkBlock = getSheet['%s1' % chr(ord('A')+i)]
+            if checkBlock.value == 'ISBN' or checkBlock.value == 'isbn':
+                return '%s' % chr(ord('A')+i)
 
-    # 自 ISBN 欄位向下收集 ISBN
-    getIsbnList = []
-    for i in range (number):
-        getIsbn = getSheet['%s%d' % (setColumn,(i+2))].value
-        #print(type('%s%d' % (Row, (i+1))))
-        #print (getIsbn)
-        getIsbnList.append (getIsbn)
+    def collectIsbn(self):
+        setColumn = self.checkFirstColumn()
+        getSheet = self.file[self.file.get_sheet_names()[0]]
 
-    return getIsbnList
+        getIsbnList = []
+        noneData = 0
+        for i in range(self.maxCollection):
+            if noneData > 2:
+                break
+            getIsbn = getSheet['%s%d' % (setColumn,(i+2))].value
+            if getIsbn is None:
+                noneData += 1
+                getIsbnList.append('None')
+            else:
+                noneData = 0
+                getIsbnList.append(getIsbn)
+        return getIsbnList
 
-'''
 # Demo
-print("Run demo")
-GetAllIsbn(10)
-'''
+if __name__ == '__main__':
+    getPath = 'test.xlsx'
+    data = CollectAllIsbn(getPath)
+    print(data.data)

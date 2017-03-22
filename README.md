@@ -38,15 +38,15 @@
 >
 > - [ ] Collect book details from Amazon.
 >
-> - -> [x] Name
+> -> - [x] Name
 >
-> - -> [x] Authors
+> -> - [x] Authors
 >
-> - -> [ ] Publisher
+> -> - [ ] Publisher
 >
-> - -> [ ] Publication year
+> -> - [ ] Publication year
 >
-> - -> [ ] Edition
+> -> - [ ] Edition
 >
 > - [x] Write .xlsx file.
 >
