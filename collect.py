@@ -54,8 +54,12 @@ class AmazonCollection():
 
     def getStar(self):
         try:
-            checkPage = self.getPage.find(class_ = 'a-icon a-icon-star a-star-4-5')
-            return checkPage.string
+            #checkPage = self.getPage.find(class_ = 'a-icon a-icon-star a-star-4-5')
+            checkPage = self.getPage.find_all(class_ = 'a-icon-alt')
+            print(len(checkPage), checkPage)
+            for i in checkPage:
+                print(i)
+            return i.string
         except:
             return "None"
 

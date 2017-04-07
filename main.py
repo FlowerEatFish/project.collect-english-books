@@ -1,3 +1,4 @@
+# coding=utf-8
 import read, collect, write, time
 
 class RunMain():
