@@ -25,6 +25,6 @@ def demo():
             print("No ISBN is available.")
             star_list.append("No ISBN is available.")
 
-    write.ExportResult(isbn_list, star_list)
+    write.export_result(isbn_list, star_list)
 
 demo()

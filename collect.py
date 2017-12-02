@@ -1,4 +1,4 @@
-"""Collect book details from Amazon"""
+"""Collect book details from Amazon."""
 import time
 import requests
 from bs4 import BeautifulSoup

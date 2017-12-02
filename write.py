@@ -1,18 +1,20 @@
+"""Write into new Excel file."""
 from openpyxl import Workbook
 
-def ExportResult (isbnList, starList):
-    print(type(isbnList))
-    print(type(starList))
-    wb = Workbook()
-    ws = wb.active
-    ws.title = "ISBN-star"
+def export_result(isbn_list, star_list):
+    """isbn_list: list[int], star_list: list[string]"""
+    print(type(isbn_list))
+    print(type(star_list))
+    workbook = Workbook()
+    worksheet = workbook.active
+    worksheet.title = "ISBN-star"
 
-    ws['A1'] = "ISBN"
-    for i in range(len(isbnList)):
-        ws['A%d' % (i+2)] = isbnList[i]
+    worksheet['A1'] = "ISBN"
+    for index, value in enumerate(isbn_list):
+        worksheet['A%d' % (index+2)] = value
 
-    ws['B1'] = "Star"
-    for i in range(len(starList)):
-        ws['B%d' % (i+2)] = starList[i]
+    worksheet['B1'] = "Star"
+    for index, value in enumerate(star_list):
+        worksheet['B%d' % (index+2)] = value
 
-    wb.save('document.xlsx')
+    workbook.save('document.xlsx')
